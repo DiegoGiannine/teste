@@ -1,0 +1,25 @@
+using System;
+
+public class Program {
+    public static void Main() {
+        // Definindo a string a ser invertida
+        string minhaString = "Exemplo de string";
+
+        // Convertendo a string em um array de caracteres
+        char[] arrayDeChars = minhaString.ToCharArray();
+
+        // Invertendo a ordem dos caracteres no array
+        int indiceFinal = arrayDeChars.Length - 1;
+        for (int i = 0; i < indiceFinal; i++, indiceFinal--) {
+            char temp = arrayDeChars[i];
+            arrayDeChars[i] = arrayDeChars[indiceFinal];
+            arrayDeChars[indiceFinal] = temp;
+        }
+
+        // Convertendo o array de caracteres de volta para uma string
+        string minhaStringInvertida = new string(arrayDeChars);
+
+        // Imprimindo a string invertida
+        Console.WriteLine(minhaStringInvertida);
+    }
+}
